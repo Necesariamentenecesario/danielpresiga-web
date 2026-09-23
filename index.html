@@ -4,30 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Necesariamente Necesario | Daniel Présiga</title>
-    <!-- Esta es la línea corregida -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Usamos el enlace que no está bloqueado (Tailwind v4) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#FDFBF7',
-                            100: '#F8D17E',
-                            400: '#F89B5B',
-                            500: '#F06543',
-                            600: '#3F8A8B',
-                            700: '#326E6F',
-                            800: '#E23A47',
-                            900: '#224A4B',
-                        }
-                    }
-                }
-            }
+    <!-- Traducimos tus colores al nuevo formato de la versión 4 -->
+    <style type="text/tailwindcss">
+        @theme {
+            --color-brand-50: #FDFBF7;
+            --color-brand-100: #F8D17E;
+            --color-brand-400: #F89B5B;
+            --color-brand-500: #F06543;
+            --color-brand-600: #3F8A8B;
+            --color-brand-700: #326E6F;
+            --color-brand-800: #E23A47;
+            --color-brand-900: #224A4B;
         }
-    </script>
+    </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-brand-50 flex flex-col min-h-screen">
 
@@ -94,14 +88,11 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Se eliminó 'hidden lg:block' y se ajustó el margen superior para celular -->
                     <div class="relative mt-8 lg:mt-0">
                         <div class="absolute inset-0 bg-brand-100 rounded-full blur-3xl opacity-60 transform translate-x-10 -translate-y-10"></div>
-                        <!-- Se ajustó la altura a 300px en celular y 550px en PC para que sea responsivo -->
                         <div class="relative z-10 bg-gray-50 rounded-3xl shadow-2xl w-full h-[300px] lg:h-[550px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 text-center p-8 overflow-hidden">
                             <i data-lucide="users" class="w-12 h-12 text-brand-400 mb-4"></i>
                             <p class="text-gray-700 font-medium text-lg hidden lg:block">Foto con estudiantes de UPB</p>
-                            <!-- Ruta de imagen ajustada para forzar la lectura en el mismo directorio -->
                             <img src="./IMG_20240506_090242.jpg" alt="Daniel trabajando con estudiantes de 11 de la UPB" class="absolute inset-0 w-full h-full object-cover bg-white" onerror="this.style.opacity='0'">
                         </div>
                     </div>
@@ -117,7 +108,6 @@
                             <div class="absolute inset-0 bg-brand-100 rounded-3xl transform -translate-x-4 translate-y-4"></div>
                             <div class="relative z-10 rounded-3xl shadow-xl w-full h-[500px] bg-brand-50 flex flex-col items-center justify-center overflow-hidden border border-brand-100">
                                 <i data-lucide="user" class="w-16 h-16 text-brand-300 mb-4"></i>
-                                <!-- Ruta de imagen ajustada -->
                                 <img src="./perfil.jpg" alt="Daniel Présiga - Psicólogo" class="absolute inset-0 w-full h-full object-cover bg-white" onerror="this.style.opacity='0'">
                             </div>
                         </div>
